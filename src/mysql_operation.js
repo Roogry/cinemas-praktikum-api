@@ -24,7 +24,7 @@ const addManyMoviesOperaton = (movies) => {
 
 const getAllMoviesOperation = () => {
     return new Promise((resolve, reject) => {
-        let sql = "SELECT * FROM movies";
+        let sql = "SELECT * FROM movies ORDER BY created_at DESC";
 
         db.query(sql, function (err, res) {
             if (err) reject(err);

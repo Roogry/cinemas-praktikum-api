@@ -78,7 +78,8 @@ const getAllMoviesHandler = async (request, h) => {
     if (result !== undefined) {
         const response = h.response({
             status: 'success',
-            result,
+            message: 'Seluruh Film berhasil didapatkan',
+            movies: result,
         });
 
         response.code(201);
@@ -110,7 +111,8 @@ const getMovieByIdHandler = async (request, h) => {
     if (result !== undefined) {
         return {
             status: 'success',
-            result,
+            message: 'Film' + result.title + 'berhasil didapatkan',
+            movie: result,
         };
     }
 
